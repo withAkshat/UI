@@ -1,6 +1,6 @@
 function Page1() {
     return<div className="page1">
-        <img src="../../public/hero-bg.png" alt="" />
+        <img src="/hero-bg.png" alt="" />
         <div className="text">
             <h3>DESIGN <br />
                 <span style={{fontFamily:"JetBrains Mono Light"}}>&</span> FREEDOM</h3>

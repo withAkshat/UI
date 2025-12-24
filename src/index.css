@@ -5,7 +5,8 @@
 }
 
 html,
-body, .root {
+body,
+.root {
   min-height: 100vh;
   width: 100%;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -17,11 +18,12 @@ body::-webkit-scrollbar {
 
 @font-face {
   font-family: tallThin;
-  src: url(./../public/ostrich-sans.sans-rounded-medium.ttf);
+  src: url(ostrich-sans.sans-rounded-medium.ttf);
 }
 .main {
   display: flex;
   flex-direction: column;
+  background-color: rgb(17, 17, 17);
 }
 .main nav {
   width: 100%;
@@ -118,15 +120,125 @@ body::-webkit-scrollbar {
   font-family: tallThin;
   font-size: 1.1rem;
 }
-
-@keyframes rotate {
-  from {
-    rotate: -30deg;
-  }
-  to {
-    rotate: 0deg;
-  }
+.main .cards {
+  margin-block: 1rem;
+  padding: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
+.main .cards .card {
+  width: 100%;
+  height: 200px;
+  color: rgb(239, 239, 239);
+  background-color: rgb(45, 45, 45);
+  border-radius: 7px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+}
+.main .cards .card h4 {
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+.main .cards .card p {
+  font-size: 0.9rem;
+}
+.main .cards .card .btn {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.main .cards .card .btn .arrow {
+  width: 30px;
+  aspect-ratio: 1/1;
+  background-color: rgba(167, 167, 167, 0.288);
+  -webkit-backdrop-filter: 10px;
+          backdrop-filter: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.699);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .cards .card .btn .arrow i {
+  transform: rotate(-145deg);
+  transition: all 0.2s ease;
+}
+.main .cards .card .btn .arrow:hover i {
+  transform: rotate(-145deg) translate(0%, 22%);
+}
+.main .cards .card .btn p {
+  font-family: tallThin;
+  font-size: 1.1rem;
+}
+.main .results {
+  color: rgb(240, 240, 240);
+  display: grid;
+  padding: 1rem;
+  grid-column: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+}
+.main .results .prev {
+  width: 100%;
+  height: 100px;
+  font-family: tallThin;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main .results .prev h5 {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+.main .results .prev p {
+  font-size: 3rem;
+}
+.main .article1 {
+  color: rgb(236, 236, 236);
+  padding: 0.5rem;
+}
+.main .article1 .desc {
+  background-color: rgb(45, 45, 45);
+  padding: 2rem;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.main .article1 .desc h5 {
+  font-family: tallThin;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.main .article1 .desc h2 {
+  font-weight: 400;
+  margin-bottom: 0.8rem;
+}
+.main .article1 .desc .content .text {
+  height: 200px;
+  font-size: 1rem;
+  font-weight: 300;
+  overflow: hidden;
+}
+.main .article1 .desc .content .text.expanded {
+  height: auto;
+}
+.main .article1 .img {
+  width: 100%;
+}
+.main .article1 .img img {
+  width: 100%;
+}
+
 @media (min-width: 768px) {
   .main nav .right {
     width: clamp(60%, 100%, 376px);
@@ -168,5 +280,41 @@ body::-webkit-scrollbar {
   .main .page1 .btn p {
     font-size: 1.25rem;
     letter-spacing: 1px;
+  }
+  .main .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .main .cards .card {
+    flex: 0 0 calc(50% - 0.2rem);
+  }
+  .main .results {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+@media (min-width: 1024px) {
+  .main .cards {
+    padding: 1.5rem;
+  }
+  .main .cards .card {
+    flex: 1;
+  }
+  .main .cards .card h4 {
+    font-size: 0.88rem;
+  }
+  .main .cards .card p {
+    font-size: 0.79rem;
+  }
+  .main .cards .card .btn .arrow {
+    width: 25px;
+  }
+  .main .cards .card .btn p {
+    font-size: 0.95rem;
+  }
+  .main .results {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
   }
 }/*# sourceMappingURL=index.css.map */
